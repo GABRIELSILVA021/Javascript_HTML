@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Exercicio 2</title>
+    <script>
+        window.onload = function () {
+            let form = document.querySelector('form');
+            form.addEventListener("submit", function (e) {
+                e.preventDefault();
+                submit();
+            });
+        }
+
+
+        function submit() {
+            const genero = document.querySelector("select");
+            const msg = document.querySelector("p");
+            const nome = document.getElementById("nome");
+
+            if (genero.value === "M") {
+                msg.textContent = "Seja bem Vindo " + nome.value;
+                msg.style.color = "pink";
+            } else {
+                msg.textContent = "Seja bem vinda " + nome.value;
+                msg.style.color = "blue";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <form>
+        <label>Informe seu nome:</label><br/>
+        <input id="nome" type="text"/><br/>
+        <label>Selecione seu gênero</label><br/>
+        <select>
+            <option value="M">Masculino</option>
+            <option value="F">Feminino</option>
+        </select>
+        <p></p>
+
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+
+</html>

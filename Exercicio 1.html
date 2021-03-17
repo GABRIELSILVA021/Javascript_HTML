@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Exercicio 1</title>
+    <script>
+        window.onload = function () {
+            let form = document.querySelector('form');
+            form.addEventListener("submit", function (e) {
+                e.preventDefault();
+                submit();
+            });
+        }
+
+
+        function submit() {
+            const select = document.querySelector("select");
+            const msg = document.querySelector("p");
+
+            if (select.value === "ensolarado") {
+                msg.textContent = "Você selecionou o clima 'Ensolarado!'";
+            } else if (select.value === "chuvoso") {
+                msg.textContent = "Você selecionou o clima 'Chuvoso!'";
+            } else if (select.value === "nevando") {
+                msg.textContent = "Você selecionou o clima 'Nevando!'";
+            } else if (select.value === "ventando") {
+                msg.textContent = "Você selecionou o clima 'Ventando!'";
+            } else {
+                msg.textContent = ""
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <form>
+        <label>Selecione um Clima</label>
+        <select>
+            <option>Selecione um Clima</option>
+            <option value="ensolarado">Ensolarado</option>
+            <option value="chuvoso">Chuvoso</option>
+            <option value="nevando">Nevando</option>
+            <option value="ventando">Ventando</option>
+        </select>
+        <p></p>
+
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+
+</html>
